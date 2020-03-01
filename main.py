@@ -7,9 +7,16 @@ from lib import process_input
 # separate bits of related functionality, much like I would already do with class-based hierarchies in PHP.
 
 
+def run_all():
+    return 'Y' == input("Run all modules in a row? [Y/n]: ")
+
+
 def main():
-    print_content.main()
-    process_input.main()
+    if run_all():
+        print_content.main()
+        process_input.main()
+    else:
+        print("Not yet ready to run a selected program.")
 
 
 main()
