@@ -15,8 +15,9 @@ def main():
     if run_all():
         print_content.main()
         process_input.main()
-    else:
-        print("Not yet ready to run a selected program.")
+        return
+
+    print("Not yet ready to run a selected program.")
 
 
 main()
