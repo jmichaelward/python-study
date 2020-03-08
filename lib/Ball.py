@@ -9,7 +9,7 @@ in Python.
 class Ball:
     # Class constructor.
     def __init__(self, name, diameter):
-        self.name = name
+        self.__name = name
         self.diameter = diameter
 
     """
@@ -18,7 +18,7 @@ class Ball:
     supposed to indicate private object access.
     """
     def __get_name(self):
-        return self.name
+        return self.__name
 
     # Get the diameter of the ball.
     def get_diameter(self):
@@ -26,6 +26,6 @@ class Ball:
 
     # Bounce the ball.
     def bounce(self):
-        print("Bouncing the ball named", self.name)
+        print("Bouncing the ball named", self.__name)
 
 
