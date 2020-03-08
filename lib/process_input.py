@@ -13,7 +13,9 @@ def square(number):
     return number * number
 
 
-# Adding this conditional guarantees that the module will run automatically if invoked directly,
-# but it will not run automatically if imported.
+"""
+Adding this conditional guarantees that the module will run automatically if invoked directly,
+but it will not run automatically if imported.
+"""
 if __name__ == '__main__':
     main()
