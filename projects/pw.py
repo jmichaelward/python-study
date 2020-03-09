@@ -47,10 +47,8 @@ def main():
         show_help()
         sys.exit()
 
-    if sys.argv[1] in commands:
-        command = sys.argv[1]
-        commands[command]()
-
+    command = commands.get(sys.argv[1], show_help)
+    command()
 
 commands = {
     'list': list_accounts,
