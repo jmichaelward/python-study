@@ -18,6 +18,16 @@ PASSWORDS = {
 }
 
 
+def show_help():
+    print('''
+        Usage: python pw.py [command] - copy account password
+        
+        Available commands:
+        - list: List available accounts.
+        - get [account]: Get the password for a given account.
+        ''')
+
+
 def list_accounts():
     for account in PASSWORDS.keys():
         print(account)
@@ -25,13 +35,7 @@ def list_accounts():
 
 def main():
     if len(sys.argv) < 2:
-        print('''
-        Usage: python pw.py [command] - copy account password
-        
-        Available commands:
-        - list: List available accounts.
-        - get [account]: Get the password for a given account.
-        ''')
+        show_help()
         sys.exit()
 
     command = sys.argv[1]  # first command line arg is the account name
@@ -42,7 +46,7 @@ def main():
         account = sys.argv[2]
         print(PASSWORDS.get(account, account + ' not found.'))
     else:
-        print('Command "', command, '" does not exist for this application.', sep='')
+        show_help()
 
 
 if __name__ == '__main__':
