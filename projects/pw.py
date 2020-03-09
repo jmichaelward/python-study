@@ -18,6 +18,15 @@ PASSWORDS = {
 }
 
 
+def get_password():
+    if len(sys.argv) != 3:
+        show_help()
+        return
+
+    account = sys.argv[2]
+    print(PASSWORDS.get(account, account + ' not found.'))
+
+
 def show_help():
     print('''
         Usage: python pw.py [command] - copy account password
@@ -38,15 +47,15 @@ def main():
         show_help()
         sys.exit()
 
-    command = sys.argv[1]  # first command line arg is the account name
+    if sys.argv[1] in commands:
+        command = sys.argv[1]
+        commands[command]()
 
-    if 'list' == command:
-        list_accounts()
-    elif 'get' == command and len(sys.argv) == 3:
-        account = sys.argv[2]
-        print(PASSWORDS.get(account, account + ' not found.'))
-    else:
-        show_help()
+
+commands = {
+    'list': list_accounts,
+    'get': get_password,
+}
 
 
 if __name__ == '__main__':
