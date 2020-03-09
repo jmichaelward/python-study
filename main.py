@@ -20,11 +20,17 @@ def bounce_ball():
     ball.bounce()
 
 
+def print_my_class():
+    ball = Ball('SomeAbstract ball', 25)
+    ball.print_name()
+
+
 def main():
     if run_all():
         print_content.main()
         process_input.main()
         bounce_ball()
+        print_my_class()
         return
 
     print("Not yet ready to run a selected program.")

@@ -4,13 +4,17 @@ A generic object to represent a physical ball.
 The purpose of this object is to learn the basics of how classes are structured
 in Python.
 """
+from lib.abstracts.SomeAbstract import SomeAbstract
 
 
-class Ball:
+class Ball(SomeAbstract):
     # Class constructor.
     def __init__(self, name, diameter):
         self.__name = name
         self.diameter = diameter
+
+    def print_name(self):
+        print(self.__name)
 
     """
     In actuality, we most likely wouldn't have a private getter, but I want to see whether
@@ -27,5 +31,4 @@ class Ball:
     # Bounce the ball.
     def bounce(self):
         print("Bouncing the ball named", self.__name)
-
 
