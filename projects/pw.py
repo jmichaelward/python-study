@@ -50,6 +50,7 @@ def main():
     command = commands.get(sys.argv[1], show_help)
     command()
 
+
 commands = {
     'list': list_accounts,
     'get': get_password,
