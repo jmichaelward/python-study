@@ -38,11 +38,11 @@ def main():
 
     if 'list' == command:
         list_accounts()
-        return
-
-    if 'get' == command and len(sys.argv) == 3:
+    elif 'get' == command and len(sys.argv) == 3:
         account = sys.argv[2]
         print(PASSWORDS.get(account, account + ' not found.'))
+    else:
+        print('Command "', command, '" does not exist for this application.', sep='')
 
 
 if __name__ == '__main__':
